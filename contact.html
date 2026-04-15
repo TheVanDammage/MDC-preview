@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact MDC Tax Services — reach out to discuss your US–France cross-border tax situation. We'll follow up by email." />
+  <title>Contact | MDC Tax Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <a href="index.html" class="nav__logo">MDC <span>Tax</span> Services</a>
+    <ul class="nav__links" id="navLinks" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active btn btn--primary nav__cta">Get in Touch</a></li>
+    </ul>
+    <button class="nav__hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- ── Page Hero ──────────────────────────────────────────── -->
+  <header class="page-hero" aria-labelledby="contact-hero-heading">
+    <span class="section__label">Start the Conversation</span>
+    <h1 id="contact-hero-heading">Get in Touch</h1>
+    <div class="gold-rule" style="margin:1rem auto;"></div>
+    <p class="lead">Fill out the form below and we'll follow up by email. No phone calls, no automated sequences—just a real response from our team.</p>
+  </header>
+
+  <main>
+    <section class="section section--tint" aria-labelledby="form-heading">
+      <div class="container">
+        <div style="display:grid; grid-template-columns:1fr 1.6fr; gap:5rem; align-items:start; max-width:1000px; margin:0 auto;">
+
+          <!-- Left: Context -->
+          <div>
+            <h2 id="form-heading" style="font-size:1.6rem; color:var(--navy-dark); margin-bottom:1rem;">What happens next</h2>
+            <div class="gold-rule gold-rule--left" style="margin-bottom:1.5rem;"></div>
+            <div style="display:flex; flex-direction:column; gap:1.75rem;">
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div style="flex-shrink:0; width:36px; height:36px; background:var(--navy-dark); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:600; font-size:0.85rem; margin-top:2px;">1</div>
+                <div>
+                  <h4 style="font-size:0.95rem; color:var(--navy-dark); margin-bottom:0.3rem; font-family:var(--font-body);">You fill out this form</h4>
+                  <p style="font-size:0.88rem; color:var(--text-muted); max-width:none;">Just a few details so we can understand your situation before we respond.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div style="flex-shrink:0; width:36px; height:36px; background:var(--navy-dark); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:600; font-size:0.85rem; margin-top:2px;">2</div>
+                <div>
+                  <h4 style="font-size:0.95rem; color:var(--navy-dark); margin-bottom:0.3rem; font-family:var(--font-body);">We review and respond</h4>
+                  <p style="font-size:0.88rem; color:var(--text-muted); max-width:none;">A member of our team will follow up by email—personally, not automatically.</p>
+                </div>
+              </div>
+              <div style="display:flex; gap:1rem; align-items:flex-start;">
+                <div style="flex-shrink:0; width:36px; height:36px; background:var(--navy-dark); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--gold); font-weight:600; font-size:0.85rem; margin-top:2px;">3</div>
+                <div>
+                  <h4 style="font-size:0.95rem; color:var(--navy-dark); margin-bottom:0.3rem; font-family:var(--font-body);">We figure out if we're the right fit</h4>
+                  <p style="font-size:0.88rem; color:var(--text-muted); max-width:none;">If we can help, we'll explain what that looks like. If we're not the right fit, we'll be honest about that too.</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top:2.5rem; padding:1.5rem; background:var(--white); border-left:3px solid var(--gold); border-radius:0 4px 4px 0;">
+              <p style="font-size:0.88rem; color:var(--text-muted); margin:0; max-width:none;">
+                <strong style="color:var(--navy-dark);">No phone calls.</strong> All communication is handled by email so we can be thoughtful and thorough in our responses. We respond to all inquiries within 2 business days.
+              </p>
+            </div>
+          </div>
+
+          <!-- Right: Form -->
+          <div>
+            <div class="form-wrap" id="formWrap">
+              <!-- Netlify Forms: data-netlify="true" enables form handling -->
+              <form
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                id="contactForm"
+                novalidate
+              >
+                <!-- Netlify hidden fields -->
+                <input type="hidden" name="form-name" value="contact" />
+                <p style="display:none;">
+                  <label>Don't fill this out: <input name="bot-field" /></label>
+                </p>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input
+                      type="text"
+                      id="firstName"
+                      name="firstName"
+                      placeholder="Marie"
+                      required
+                      autocomplete="given-name"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input
+                      type="text"
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Dupont"
+                      required
+                      autocomplete="family-name"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="marie@example.com"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="service">Which service are you interested in?</label>
+                  <select id="service" name="service" required>
+                    <option value="" disabled selected>Select a service…</option>
+                    <option value="us-french-tax-preparation">US &amp; French Tax Preparation</option>
+                    <option value="cross-border-advice">Cross-Border Tax Advice</option>
+                    <option value="estates-successions">Estates &amp; Successions</option>
+                    <option value="not-sure">Not sure yet</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="referral">How did you hear about us?</label>
+                  <select id="referral" name="referral" required>
+                    <option value="" disabled selected>Select an option…</option>
+                    <option value="referral-friend">Referred by a friend or colleague</option>
+                    <option value="google-search">Google search</option>
+                    <option value="social-media">Social media</option>
+                    <option value="expat-community">Expat community or forum</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom:2rem;">
+                  <button type="submit" class="btn btn--primary form-submit">Send Message</button>
+                </div>
+
+                <p style="font-size:0.78rem; color:var(--text-muted); margin:0; max-width:none;">
+                  By submitting this form, you agree that we may contact you by email regarding your inquiry. We do not share your information with third parties.
+                </p>
+
+              </form>
+            </div>
+
+            <!-- Confirmation message (shown after submit) -->
+            <div class="form-wrap form-confirmation" id="formConfirmation" style="display:none;" role="alert">
+              <div class="form-confirmation__icon">✉️</div>
+              <h3>Thanks! We'll be in touch shortly via email.</h3>
+              <p>We've received your message and will follow up within 2 business days. Keep an eye on your inbox—including your spam folder, just in case.</p>
+              <div style="margin-top:2rem;">
+                <a href="index.html" class="btn btn--outline-gold">Back to Home</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="footer__inner">
+      <div>
+        <p class="footer__brand-name">MDC <span>Tax</span> Services</p>
+        <p class="footer__tagline">US–France cross-border tax preparation and planning for US citizens living in France.</p>
+      </div>
+      <div>
+        <p class="footer__heading">Pages</p>
+        <ul class="footer__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer__heading">Services</p>
+        <ul class="footer__links">
+          <li><a href="services.html#tax-prep">Tax Preparation</a></li>
+          <li><a href="services.html#advice">Cross-Border Advice</a></li>
+          <li><a href="services.html#estates">Estates &amp; Successions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2025 MDC Tax Services. All rights reserved.</p>
+      <p class="footer__disclaimer">MDC Tax Services provides US and French tax preparation and advisory services to individuals. We do not provide legal advice.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

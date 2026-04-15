@@ -133,9 +133,9 @@ p {
 .section__label {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 0.75rem;
@@ -481,17 +481,13 @@ p {
   align-items: flex-start;
 }
 
-.approach__point-icon {
+.approach__point-marker {
   flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  background: rgba(227,193,112,0.15);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  margin-top: 2px;
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 1px;
+  margin-top: 0.6em;
 }
 
 .approach__point h4 {
@@ -939,7 +935,6 @@ select {
 .footer__disclaimer {
   font-size: 0.78rem;
   color: rgba(255,255,255,0.35);
-  max-width: 60ch;
 }
 
 /* ── Services Detail Page ──────────────────────────────────── */

@@ -1,0 +1,64 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Uncommit this to require editorial approval before publishing
+# publish_mode: editorial_workflow
+
+media_folder: "assets"
+public_folder: "/assets"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+
+      - label: "Home Page"
+        name: "home"
+        file: "index.html"
+        fields:
+          - label: "Page HTML"
+            name: "body"
+            widget: "code"
+            default_language: "html"
+            output_code_only: true
+
+      - label: "Services Page"
+        name: "services"
+        file: "services.html"
+        fields:
+          - label: "Page HTML"
+            name: "body"
+            widget: "code"
+            default_language: "html"
+            output_code_only: true
+
+      - label: "About Page"
+        name: "about"
+        file: "about.html"
+        fields:
+          - label: "Page HTML"
+            name: "body"
+            widget: "code"
+            default_language: "html"
+            output_code_only: true
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "contact.html"
+        fields:
+          - label: "Page HTML"
+            name: "body"
+            widget: "code"
+            default_language: "html"
+            output_code_only: true
+
+      - label: "Privacy Policy"
+        name: "privacy"
+        file: "privacy_policy.html"
+        fields:
+          - label: "Page HTML"
+            name: "body"
+            widget: "code"
+            default_language: "html"
+            output_code_only: true

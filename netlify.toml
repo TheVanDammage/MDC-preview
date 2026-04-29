@@ -1,0 +1,13 @@
+[build]
+  publish = "."
+
+# Enable Netlify Identity for CMS authentication
+[build.environment]
+  NODE_VERSION = "18"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Cache-Control = "no-cache"

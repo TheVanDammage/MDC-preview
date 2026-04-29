@@ -163,7 +163,7 @@ p {
 .btn--primary {
   background: var(--gold);
   color: var(--navy-deep);
-  border-color: var(--gold);
+  border-color: transparent;
 }
 
 .btn--primary:hover {
@@ -216,8 +216,8 @@ p {
   right: 0;
   z-index: 100;
   background: var(--navy-deep);
-  padding: 0 1.5rem;
-  height: 70px;
+  padding: 0 3rem;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -226,16 +226,14 @@ p {
 }
 
 .nav__logo {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--white);
-  letter-spacing: 0.02em;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  color: #E3C170;
+  font-size: 28px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
 }
 
-.nav__logo span {
-  color: var(--gold);
-}
 
 .nav__links {
   display: flex;
@@ -278,6 +276,16 @@ p {
 .nav__cta {
   padding: 0.5rem 1.4rem;
   font-size: 0.82rem;
+  background: #1D3052;
+  color: #E3C170;
+  border-color: #E3C170;
+}
+
+.nav__cta:hover {
+  background: #E3C170;
+  color: #1D3052;
+  border-color: #E3C170;
+  transform: translateY(-1px);
 }
 
 .nav__hamburger {
@@ -308,7 +316,7 @@ p {
   background: linear-gradient(150deg, var(--navy-deep) 0%, var(--navy-dark) 55%, var(--navy-mid) 100%);
   display: flex;
   align-items: center;
-  padding: 100px 1.5rem 5rem;
+  padding: 120px 1.5rem 5rem;
   position: relative;
   overflow: hidden;
 }
@@ -875,6 +883,7 @@ select {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
+  align-items: start;
 }
 
 .footer__brand-name {
@@ -886,6 +895,13 @@ select {
 
 .footer__brand-name span {
   color: var(--gold);
+}
+
+.footer__logo {
+  height: 13.5rem;
+  width: auto;
+  display: block;
+  margin-bottom: 0.75rem;
 }
 
 .footer__tagline {
@@ -921,8 +937,8 @@ select {
 
 .footer__bottom {
   max-width: var(--max-width);
-  margin: 2.5rem auto 0;
-  padding-top: 1.5rem;
+  margin: 1.25rem auto 0;
+  padding-top: 0.75rem;
   border-top: 1px solid rgba(255,255,255,0.08);
   display: flex;
   justify-content: space-between;
@@ -1025,7 +1041,8 @@ select {
 
 .not-offered-box li {
   font-size: 0.9rem;
-  color: var(--text-muted);
+  font-weight: 500;
+  color: var(--navy-dark);
   padding-left: 1.1rem;
   position: relative;
 }
@@ -1034,8 +1051,9 @@ select {
   content: '✕';
   position: absolute;
   left: 0;
-  color: var(--slate);
-  font-size: 0.7rem;
+  color: var(--gold);
+  font-size: 0.85rem;
+  font-weight: 700;
 }
 
 /* ── About Page ────────────────────────────────────────────── */
@@ -1107,7 +1125,7 @@ select {
 
   .hero {
     min-height: auto;
-    padding-top: 110px;
+    padding-top: 120px;
     padding-bottom: 4rem;
   }
 

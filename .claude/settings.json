@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"c:/Users/matts/Desktop/Consulting/MDC Tax Services/Website/assets/images/02 - Logo export ready.png\" \"c:/Users/matts/Desktop/Consulting/MDC Tax Services/Website/assets/images/mdc-logo.png\")",
+      "Bash(cp \"c:/Users/matts/Desktop/Consulting/MDC Tax Services/Website/assets/images/04 - Favicon 32.png\" \"c:/Users/matts/Desktop/Consulting/MDC Tax Services/Website/assets/images/favicon.png\")"
+    ]
+  }
+}

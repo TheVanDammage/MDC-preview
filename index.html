@@ -9,12 +9,144 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <style>
+    /* Option D: Centered full-width hero with a stats bar anchored at the bottom */
+    /* Navy/gold palette — inherits from style.css defaults, no override needed */
+    .hero {
+      min-height: 100vh;
+      padding: 120px 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero__content {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__sub {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero__actions {
+      justify-content: center;
+    }
+
+    /* Stats bar anchored to the bottom of the hero */
+    .hero__stats-bar {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 4rem auto 0;
+      border-top: 1px solid rgba(227, 193, 112, 0.2);
+      padding: 2rem 0 2.5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .hero__stat-item {
+      text-align: center;
+      padding: 0 2rem;
+      border-right: 1px solid rgba(227, 193, 112, 0.15);
+    }
+
+    .hero__stat-item:last-child {
+      border-right: none;
+    }
+
+    .hero__stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: var(--gold);
+      line-height: 1;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .hero__stat-desc {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.4;
+      max-width: none;
+      text-align: center;
+    }
+
+    .hero__logo {
+      width: min(520px, 82%);
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 16px;
+    }
+
+    .hero .btn--primary {
+      padding: 1.1rem 3rem;
+      font-size: 1rem;
+    }
+
+    /* Inverted outline-gold: solid by default, outline on hover */
+    .btn--outline-gold {
+      background: var(--gold);
+      color: var(--navy-deep);
+      border-color: var(--gold);
+    }
+
+    .btn--outline-gold:hover {
+      background: transparent;
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* Wider headline for centered layout */
+    .hero__content h1 {
+      font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+    }
+
+    @media (max-width: 768px) {
+      .hero__stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem 0;
+      }
+
+      .hero__stat-item:nth-child(2) {
+        border-right: none;
+      }
+
+      .hero__stat-item {
+        padding: 0 1rem;
+      }
+
+      .hero__actions {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero__stats-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
 
   <!-- ── Navigation ─────────────────────────────────────────── -->
   <nav class="site-nav" aria-label="Main navigation">
-    <a href="index.html" class="nav__logo">MDC <span>Tax</span> Services</a>
+    <a href="/" class="nav__logo">MDC</a>
     <ul class="nav__links" id="navLinks" role="list">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -28,22 +160,24 @@
     </button>
   </nav>
 
-  <!-- ── Hero ───────────────────────────────────────────────── -->
+  <!-- ── Hero: Option D — Centered + Stats Bar ──────────────── -->
   <section class="hero" aria-labelledby="hero-heading">
+
+    <img src="assets/images/mdc-logo-transparent.png" alt="MDC Tax Services" class="hero__logo" />
+
+    <!-- Centered copy -->
     <div class="hero__content">
-      <span class="hero__eyebrow">US–France Cross-Border Tax Specialists</span>
+      <span class="hero__eyebrow" style="border-left:none; padding-left:0;">US–France Individual Tax Specialists</span>
       <h1 id="hero-heading">
         Your taxes in two countries.<br />
         <em>Handled with the whole picture in mind.</em>
       </h1>
       <p class="hero__sub">
-        Living in France as a US citizen means navigating two tax systems, dozens of filing obligations, and real financial consequences if you get it wrong. We take care of all of it—and plan ahead so you're never caught off guard.
+        Living in France as a US citizen or in the US with French income means navigating two tax systems, dozens of filing obligations, and real financial consequences if you get it wrong. We take care of it—and plan ahead so you're never caught off guard.
       </p>
-      <div class="hero__actions">
-        <a href="contact.html" class="btn btn--primary">Start the Conversation</a>
-        <a href="services.html" class="btn btn--outline">See What We Do</a>
-      </div>
     </div>
+
+    
   </section>
 
   <!-- ── Pain Points ─────────────────────────────────────────── -->
@@ -67,11 +201,7 @@
           <h4>Life Events Without Guidance</h4>
           <p>Opening an Assurance Vie. Selling a property. Receiving an inheritance. Every major decision has cross-border tax consequences.</p>
         </div>
-        <div class="pain-card">
-          <h4>Tired of Starting Over</h4>
-          <p>Every year you explain your situation from scratch to someone who doesn't fully understand it—and still aren't confident in the result.</p>
         </div>
-      </div>
     </div>
   </section>
 
@@ -80,7 +210,7 @@
     <div class="container">
       <div class="section__header">
         <span class="section__label">What We Do</span>
-        <h2 id="services-heading">Comprehensive cross-border tax services</h2>
+        <h2 id="services-heading">Dual Jurisdiction Tax Services</h2>
         <div class="gold-rule"></div>
         <p class="lead" style="margin-top:1.25rem;">We work exclusively with individuals—not businesses—and focus on building lasting relationships that grow with your financial life.</p>
       </div>
@@ -90,12 +220,13 @@
           <p>Annual filing for both countries, handled together. We ensure your US obligations—including FBAR—are met every year, and get you compliant if you've fallen behind.</p>
           <ul class="service-card__list">
             <li>FBAR (Foreign Bank Account Report) compliance</li>
-            <li>Annual individual tax filing for both countries</li>
-            <li>Catch-up filing and compliance programs</li>
+            <li>Annual individual tax filing for both countries (US: 1040, 1040NR, 2555, 1116, 8621, etc, FR: 2042, 2047, 3916, etc)</li>
+            <li>Catch-up filing and compliance programs - Streamlined Filing Procedures</li>
+            <li>Renunciation of US citizenship, returning Greencard, and Exit Tax</li>
           </ul>
         </div>
         <div class="service-card">
-          <h3>Cross-Border Tax Advice</h3>
+          <h3>Tax Guidance</h3>
           <p>Before you open an account, sell a property, or make an investment—understand the implications on both sides of the Atlantic. We give you the full picture upfront.</p>
           <ul class="service-card__list">
             <li>PEA, Assurance Vie &amp; foreign brokerage consequences</li>
@@ -104,12 +235,11 @@
           </ul>
         </div>
         <div class="service-card">
-          <h3>Estates &amp; Successions</h3>
-          <p>Cross-border inheritance and estate matters require specialized knowledge. We handle the filings, flag the obligations, and help you navigate what can be a complex process.</p>
+          <h3>Gifts &amp; Inheritances</h3>
+          <p>Inheritance and gift tax matters require specialized knowledge. We can help you navigate what can be a complex process.</p>
           <ul class="service-card__list">
-            <li>Cross-border inheritance filings</li>
-            <li>Foreign estate compliance</li>
-            <li>Estate tax reporting obligations</li>
+            <li>US estate and gift tax returns 706, 706NA, 709, 709NA, 3520</li>
+            <li>French gifts and successions explained and assisted when possible (note, many French successions must be administered by a notaire)</li>
           </ul>
         </div>
       </div>
@@ -125,9 +255,15 @@
       <div class="approach-grid">
         <div>
           <span class="section__label">Our Approach</span>
-          <h2 id="approach-heading" style="color:var(--white); margin-bottom:0.5rem;">We plan ahead.<br />Not just this year—the ones to come.</h2>
           <div class="gold-rule gold-rule--left"></div>
           <div class="approach__points">
+            <div class="approach__point">
+              <div class="approach__point-marker"></div>
+              <div>
+                <h4>Specialists, Not Generalists</h4>
+                <p>US–France dual taxation is all we do. You benefit from deep, specific expertise that a general preparer simply can't match.</p>
+              </div>
+            </div>
             <div class="approach__point">
               <div class="approach__point-marker"></div>
               <div>
@@ -140,13 +276,6 @@
               <div>
                 <h4>Long-Term Relationships</h4>
                 <p>We're not here for a one-off transaction. We learn your situation deeply so you don't have to explain it every year.</p>
-              </div>
-            </div>
-            <div class="approach__point">
-              <div class="approach__point-marker"></div>
-              <div>
-                <h4>Specialists, Not Generalists</h4>
-                <p>US–France cross-border taxation is all we do. You benefit from deep, specific expertise that a general preparer simply can't match.</p>
               </div>
             </div>
           </div>
@@ -180,13 +309,7 @@
           </div>
           <div class="team-card__body">
             <h3 class="team-card__name">Susan</h3>
-            <p class="team-card__title">CPA &amp; Cross-Border Tax Strategist</p>
-            <p class="team-card__bio">A Certified Public Accountant with a Master's in Taxation and over 15 years of experience, Susan leads the firm's cross-border planning and estate work.</p>
-            <ul class="team-card__credentials">
-              <li>Certified Public Accountant (CPA)</li>
-              <li>Master's in Taxation, University of Florida</li>
-              <li>15+ years of cross-border tax experience</li>
-            </ul>
+            <p class="team-card__bio">Florida licensed CPA & IRS Enrolled Agent with a Master's in Taxation and over 15 years of experience.</p>
           </div>
         </div>
         <div class="team-card">
@@ -195,13 +318,7 @@
           </div>
           <div class="team-card__body">
             <h3 class="team-card__name">Ian</h3>
-            <p class="team-card__title">IRS Enrolled Agent &amp; US Tax Specialist</p>
-            <p class="team-card__bio">With 13 years of experience working in France, Ian brings deep expertise in US tax obligations for Americans abroad—from routine annual filing to complex compliance situations.</p>
-            <ul class="team-card__credentials">
-              <li>IRS Registered Tax Return Preparer</li>
-              <li>13 years of experience in France</li>
-              <li>Specialist in expat filing &amp; FBAR compliance</li>
-            </ul>
+            <p class="team-card__bio">IRS Enrolled Agent & US Tax Specialist with 13 years of experience working in France.</p>
           </div>
         </div>
       </div>
@@ -211,32 +328,7 @@
     </div>
   </section>
 
-  <!-- ── Testimonials ────────────────────────────────────────── -->
-  <section class="section section--dark" aria-labelledby="testimonials-heading">
-    <div class="container">
-      <div class="section__header">
-        <span class="section__label">Client Stories</span>
-        <h2 id="testimonials-heading">What our clients say</h2>
-        <div class="gold-rule"></div>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card testimonial-card--placeholder">
-          <p class="testimonial-card__text">Client testimonial coming soon. We're gathering feedback from clients to share here.</p>
-          <p class="testimonial-card__author">— Client Name, Paris</p>
-        </div>
-        <div class="testimonial-card testimonial-card--placeholder">
-          <p class="testimonial-card__text">Client testimonial coming soon. We're gathering feedback from clients to share here.</p>
-          <p class="testimonial-card__author">— Client Name, Lyon</p>
-        </div>
-        <div class="testimonial-card testimonial-card--placeholder">
-          <p class="testimonial-card__text">Client testimonial coming soon. We're gathering feedback from clients to share here.</p>
-          <p class="testimonial-card__author">— Client Name, Bordeaux</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CTA Banner ──────────────────────────────────────────── -->
+    <!-- ── CTA Banner ──────────────────────────────────────────── -->
   <section class="cta-banner" aria-labelledby="cta-heading">
     <div class="container">
       <span class="section__label">Ready to Get Started?</span>
@@ -250,7 +342,7 @@
   <footer class="site-footer" aria-label="Site footer">
     <div class="footer__inner">
       <div>
-        <p class="footer__brand-name">MDC <span>Tax</span> Services</p>
+        <img src="assets/images/mdc-logo-transparent.png" alt="MDC Tax Services" class="footer__logo" />
         <p class="footer__tagline">US–France cross-border tax preparation and planning for US citizens living in France.</p>
       </div>
       <div>
@@ -278,5 +370,17 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 </head>
 <body>
 
   <!-- ── Navigation ─────────────────────────────────────────── -->
   <nav class="site-nav" aria-label="Main navigation">
-    <a href="index.html" class="nav__logo">MDC <span>Tax</span> Services</a>
+    <a href="/" class="nav__logo">MDC</a>
     <ul class="nav__links" id="navLinks" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html" class="active">Services</a></li>
@@ -102,7 +103,7 @@
       <div class="service-detail" id="estates">
         <div class="service-detail__grid">
           <div>
-            <h2>Estates &amp; Successions</h2>
+            <h2>Gifts &amp; Inheritances</h2>
             <div class="gold-rule gold-rule--left" style="margin-top:0.75rem;"></div>
           </div>
           <div>
@@ -129,7 +130,7 @@
     <section class="section section--tint" aria-labelledby="not-offered-heading">
       <div class="container">
         <div class="section__header" style="text-align:left; max-width:none;">
-          <span class="section__label">Scope of Service</span>
+          <span class="section__label">Scope of Services</span>
           <h2 id="not-offered-heading" style="text-align:left;">What we don't do</h2>
           <div class="gold-rule gold-rule--left"></div>
           <p class="lead" style="margin-top:1rem; text-align:left;">We focus on what we're best at. If your situation falls outside our scope, we'll tell you upfront and point you in the right direction.</p>
@@ -149,30 +150,7 @@
       </div>
     </section>
 
-    <!-- ── Case Studies Placeholder ───────────────────────────── -->
-    <section class="section section--dark" aria-labelledby="cases-heading">
-      <div class="container">
-        <div class="section__header">
-          <span class="section__label">Success Stories</span>
-          <h2 id="cases-heading">Client scenarios we've solved</h2>
-          <div class="gold-rule"></div>
-        </div>
-        <div class="case-study-grid">
-          <div class="case-study-card case-study-card--placeholder">
-            <p class="case-study-card__tag">Case Study — Coming Soon</p>
-            <h3>Catching Up After Years of Non-Filing</h3>
-            <p>A US client who had been living in France for 8 years without filing US returns came to us fearing large penalties. Through the IRS Streamlined program, we resolved years of outstanding filings with significantly reduced exposure.</p>
-          </div>
-          <div class="case-study-card case-study-card--placeholder">
-            <p class="case-study-card__tag">Case Study — Coming Soon</p>
-            <h3>Navigating a Cross-Border Inheritance</h3>
-            <p>A client inherited property in the US while residing in France. We coordinated the French succession declaration, the US estate tax return, and the subsequent French rental income reporting—handling all three simultaneously.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ── CTA Banner ──────────────────────────────────────────── -->
+     <!-- ── CTA Banner ──────────────────────────────────────────── -->
     <section class="cta-banner" aria-labelledby="services-cta-heading">
       <div class="container">
         <span class="section__label">Get Started</span>
@@ -187,7 +165,7 @@
   <footer class="site-footer" aria-label="Site footer">
     <div class="footer__inner">
       <div>
-        <p class="footer__brand-name">MDC <span>Tax</span> Services</p>
+        <img src="assets/images/mdc-logo-transparent.png" alt="MDC Tax Services" class="footer__logo" />
         <p class="footer__tagline">US–France cross-border tax preparation and planning for US citizens living in France.</p>
       </div>
       <div>
@@ -215,5 +193,17 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

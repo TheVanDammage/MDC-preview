@@ -9,12 +9,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
 </head>
 <body>
 
   <!-- ── Navigation ─────────────────────────────────────────── -->
   <nav class="site-nav" aria-label="Main navigation">
-    <a href="index.html" class="nav__logo">MDC <span>Tax</span> Services</a>
+    <a href="/" class="nav__logo">MDC</a>
     <ul class="nav__links" id="navLinks" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -185,7 +186,7 @@
   <footer class="site-footer" aria-label="Site footer">
     <div class="footer__inner">
       <div>
-        <p class="footer__brand-name">MDC <span>Tax</span> Services</p>
+        <img src="assets/images/mdc-logo-transparent.png" alt="MDC Tax Services" class="footer__logo" />
         <p class="footer__tagline">US–France cross-border tax preparation and planning for US citizens living in France.</p>
       </div>
       <div>
@@ -213,5 +214,17 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

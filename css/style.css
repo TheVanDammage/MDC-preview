@@ -730,7 +730,8 @@ p {
 
 .contact-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr);
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  grid-template-areas: "form context";
   gap: 5rem;
   align-items: start;
   max-width: 1000px;
@@ -739,6 +740,14 @@ p {
 
 .contact-layout > * {
   min-width: 0;
+}
+
+.contact-layout > :first-child {
+  grid-area: context;
+}
+
+.contact-layout > :nth-child(2) {
+  grid-area: form;
 }
 
 .form-group {
@@ -1167,8 +1176,10 @@ select {
     display: flex;
   }
 
-  .nav__cta {
-    display: none;
+  .nav__links .nav__cta {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
   }
 
   .hero {
@@ -1209,6 +1220,9 @@ select {
 
   .contact-layout {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "context"
+      "form";
     gap: 2.5rem;
   }
 
